@@ -53,14 +53,13 @@
     position: relative;
     background: rgba(0, 0, 0, 0.3);
     color: var(--text-color);
-    padding: 0.5rem 1rem; /* Padding ajusté pour le look "tag" */
+    padding: 0.5rem 1rem;
     font-size: 0.95rem;
     cursor: default;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     white-space: nowrap;
-    /* Override StarBorder default style if needed */
 }
 
 .no-skills {
@@ -73,7 +72,7 @@
 /* --- CardSwap Wrapper (Soft Skills) --- */
 .cardswap-wrapper {
     margin: 0 auto;
-    padding-top: 16rem; /* Augmenté pour descendre les cartes */
+    padding-top: 16rem; /* Valeur Desktop */
     display: flex;
     justify-content: center;
 }
@@ -141,11 +140,21 @@
         padding: 2rem 1rem;
     }
 
+    .skills-section h3 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
     .technical-skills-grid {
-        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+    
+    .cardswap-wrapper {
+        padding-top: 4rem; /* BEAUCOUP moins de padding sur mobile */
     }
     
     .soft-skill-card {
         width: 100%;
+        min-width: unset;
     }
 }

@@ -4,6 +4,7 @@
   justify-content: center;
   height: 90vh;
   text-align: center;
+  padding: 0 1rem; /* Ajout d'un padding latéral pour éviter que le texte touche les bords sur mobile */
 }
 
 .hero-title {
@@ -16,9 +17,9 @@
 
 .hero-subtitle {
   font-size: 1.5rem;
-  color: var(--accent-color); /* Changed color to accent-color */
+  color: var(--accent-color);
   margin-bottom: 2rem;
-  text-shadow: 0 0 5px var(--accent-color); /* Added text-shadow */
+  text-shadow: 0 0 5px var(--accent-color);
 }
 
 .hero-button {
@@ -36,4 +37,20 @@
 .hero-button:hover {
   background-color: var(--accent-color);
   color: var(--text-color);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem; /* Taille plus raisonnable sur mobile */
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
 }

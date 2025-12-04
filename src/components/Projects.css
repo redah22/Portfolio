@@ -1,9 +1,9 @@
 .projects {
   padding: 4rem 2rem;
-  min-height: 100vh; /* Ensure section takes full viewport height */
-  display: flex; /* Use flexbox for vertical alignment */
+  min-height: 100vh;
+  display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
+  justify-content: center;
 }
 
 .projects-title {
@@ -23,21 +23,19 @@
   margin: 0 auto;
 }
 
-/* New styles for SpotlightCard integration */
 .project-spotlight-card {
-  /* Overrides or complements default .card-spotlight styles */
-  background-color: var(--primary-color); /* Match original background */
-  padding: 2rem; /* Match original padding */
-  border-radius: 8px; /* Match original border-radius */
-  text-align: left; /* Match original text alignment */
-  transition: transform 0.3s, box-shadow 0.3s; /* Keep original transitions */
-  border: 1px solid var(--secondary-color); /* Match original border */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Match original box-shadow */
+  background-color: var(--primary-color);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid var(--secondary-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .project-spotlight-card:hover {
-  transform: translateY(-10px); /* Keep original hover transform */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Keep original hover box-shadow */
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-spotlight-card h3 {
@@ -59,4 +57,21 @@
   line-height: 1.5;
   margin-bottom: 1.5rem;
   color: var(--text-color-secondary);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .projects {
+    padding: 3rem 1rem; /* Moins de padding */
+  }
+
+  .projects-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .projects-grid {
+     grid-template-columns: 1fr; /* Force une seule colonne */
+     gap: 1.5rem;
+  }
 }

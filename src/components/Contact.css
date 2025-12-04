@@ -29,12 +29,11 @@
 
 .contact-header-text h3 {
   font-size: 2rem;
-  margin-bottom: 2rem; /* Plus d'espace puisqu'on a enlevé la description */
+  margin-bottom: 2rem;
   color: #fff;
 }
 
 .contact-desc {
-  /* Supprimée visuellement si le <p> est vide, mais gardons le style au cas où */
   margin-bottom: 2rem;
   color: #a0a0a0;
   line-height: 1.6;
@@ -67,10 +66,9 @@
   border-color: var(--accent-color);
 }
 
-/* Style spécial pour les cartes Freelance / Passion */
 .highlight-card {
-    border-left: 3px solid var(--accent-color); /* Bordure gauche colorée pour les distinguer */
-    background: rgba(233, 69, 96, 0.05); /* Très léger fond rouge */
+    border-left: 3px solid var(--accent-color);
+    background: rgba(233, 69, 96, 0.05);
 }
 
 .icon-box {
@@ -210,6 +208,11 @@
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
+  .contact-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+  }
+
   .contact-container {
     flex-direction: column;
     gap: 3rem;
@@ -222,7 +225,7 @@
   
   .contact-form {
       padding: 2rem;
-      margin-top: 0;
+      margin-top: 0; /* Reset margin sur mobile */
   }
   
   .submit-btn {

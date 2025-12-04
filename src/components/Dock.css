@@ -10,12 +10,12 @@
   bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000; /* Added a high z-index */
+  z-index: 1000;
 }
 
 .dock-inner-content {
   display: flex;
-  align-items: flex-start; /* Changed from center to flex-start */
+  align-items: flex-start;
   width: fit-content;
   gap: 0.5rem;
   border-radius: 1rem;
@@ -62,4 +62,28 @@
   color: var(--text-color);
   transform: translateX(-50%);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.dock-item:hover .dock-label {
+  opacity: 1;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .dock-panel {
+        bottom: 0.5rem; /* Plus bas */
+        transform: translateX(-50%) scale(0.85); /* Légèrement plus petit */
+        width: 100%; /* Pour éviter les débordements */
+        display: flex;
+        justify-content: center;
+    }
+
+    .dock-inner-content {
+        background: rgba(22, 33, 62, 0.9); /* Fond plus opaque sur mobile pour la lisibilité */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.5rem;
+    }
 }
