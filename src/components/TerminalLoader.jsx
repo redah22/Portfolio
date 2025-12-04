@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import './TerminalLoader.css';
+import TextType from './TextType';
 
 const TerminalLoader = ({ onComplete }) => {
-  const [lines, setLines] = useState([]);
-  const [showButton, setShowButton] = useState(false);
+  const [visibleLineCount, setVisibleLineCount] = useState(0);
+  const [showButtons, setShowButtons] = useState(false);
   
-  // Configuration des lignes à afficher
   const textLines = [
     "┌──────────────────────────────────────────┐",
     "│       REDA AMMARI  -  PORTFOLIO OS       │",
@@ -35,43 +35,44 @@ const TerminalLoader = ({ onComplete }) => {
     "> READY TO LAUNCH."
   ];
 
-  useEffect(() => {
-    let currentLineIndex = 0;
-    let timer;
-
-    const addLine = () => {
-      if (currentLineIndex < textLines.length) {
-        setLines((prev) => [...prev, textLines[currentLineIndex]]);
-        
-        // Temps aléatoire entre chaque ligne pour faire plus "vrai"
-        const randomDelay = Math.random() * 400 + 100; 
-        
-        currentLineIndex++;
-        timer = setTimeout(addLine, randomDelay);
-      } else {
-        // Fin de l'écriture
-        setTimeout(() => setShowButton(true), 500);
-      }
-    };
-
-    // Démarrage après un petit délai
-    timer = setTimeout(addLine, 500);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const handleLineComplete = () => {
+    // Passer à la ligne suivante immédiatement pour accélérer
+    const nextIndex = visibleLineCount + 1;
+    
+    if (nextIndex < textLines.length) {
+       setVisibleLineCount(nextIndex);
+    } else {
+      // Tout est fini
+      setTimeout(() => setShowButtons(true), 200); // Délai court avant les boutons
+    }
+  };
 
   return (
     <div className="terminal-loader">
       <div className="terminal-content">
-        {lines.map((line, index) => (
-          <div key={index} className="terminal-line">
-            {line}
-          </div>
-        ))}
-        {/* Le curseur clignotant est toujours à la fin de la dernière ligne ou sur une nouvelle ligne */}
-        {!showButton && <span className="terminal-cursor"></span>}
+        {textLines.map((line, index) => {
+           // On n'affiche la ligne que si on est arrivé à son tour
+           if (index > visibleLineCount) return null;
+
+           return (
+             <div key={index} className="terminal-line">
+               <TextType 
+                 text={line === "" ? " " : line}
+                 typingSpeed={5} // Beaucoup plus rapide (était 15)
+                 startOnVisible={true}
+                 loop={false}
+                 showCursor={index === visibleLineCount && !showButtons}
+                 onTypingDone={() => {
+                   if (index === visibleLineCount) {
+                      handleLineComplete();
+                   }
+                 }}
+               />
+             </div>
+           );
+        })}
         
-        {showButton && (
+        {showButtons && (
           <div className="access-button-container">
             <button className="access-btn" onClick={() => onComplete('en')}>
               [ EN ] ENGLISH
