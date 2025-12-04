@@ -1,0 +1,109 @@
+.terminal-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-color);
+  color: var(--accent-color); /* Utilisation de la couleur d'accent */
+  font-family: 'Courier New', Courier, monospace;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrage vertical */
+  align-items: center;     /* Centrage horizontal */
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto; /* Permet le scroll si nécessaire sur très petits écrans */
+}
+
+.terminal-content {
+  max-width: 800px;
+  width: fit-content; /* S'adapte au contenu (le cadre) */
+  margin: 0 auto;     /* Centrage */
+}
+
+.terminal-line {
+  margin-bottom: 0.2rem; /* Espacement réduit */
+  font-size: 1rem;
+  line-height: 1.2;      /* Hauteur de ligne réduite */
+  text-shadow: 0 0 5px rgba(233, 69, 96, 0.5); /* Couleur d'accent */
+  white-space: pre;      /* Préserve l'espacement pour le cadre ASCII */
+}
+
+.terminal-line.hidden {
+  opacity: 0;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.2em;
+  background-color: var(--accent-color);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+  margin-left: 5px;
+}
+
+.access-button-container {
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espace entre les boutons */
+  flex-wrap: wrap; /* Pour que ça passe à la ligne sur petit mobile */
+}
+
+.access-btn {
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  padding: 10px 20px; /* Un peu moins large pour qu'ils tiennent à deux */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(233, 69, 96, 0.2);
+  min-width: 150px; /* Largeur minimum pour l'uniformité */
+}
+
+.access-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--background-color); /* Texte sombre sur fond d'accent */
+  box-shadow: 0 0 20px rgba(233, 69, 96, 0.8); /* Couleur d'accent */
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .terminal-loader {
+    padding: 1rem 0.5rem;
+    align-items: flex-start; /* Alignement gauche sur mobile */
+    justify-content: flex-start; /* Commence en haut sur mobile */
+  }
+
+  .terminal-content {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .terminal-line {
+    font-size: 0.6rem; /* Police très petite pour le cadre */
+    line-height: 1.1;
+    margin-bottom: 0.1rem;
+    white-space: pre-wrap; /* Permet le wrap si nécessaire sauf si on force le pre via style inline pour le cadre */
+  }
+}

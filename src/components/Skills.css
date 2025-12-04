@@ -1,0 +1,151 @@
+.skills-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.skills-section h3 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--accent-color);
+}
+
+/* --- NOUVEAU : Grille pour les compétences techniques --- */
+.technical-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    text-align: left;
+}
+
+.tech-skill-category {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-skill-category:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-color: rgba(233, 69, 96, 0.2);
+}
+
+.tech-skill-category h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.skills-list-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Style des items individuels (StarBorder) */
+.skill-item {
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--text-color);
+    padding: 0.5rem 1rem; /* Padding ajusté pour le look "tag" */
+    font-size: 0.95rem;
+    cursor: default;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    /* Override StarBorder default style if needed */
+}
+
+.no-skills {
+    color: var(--text-color-secondary);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+
+/* --- CardSwap Wrapper (Soft Skills) --- */
+.cardswap-wrapper {
+    margin: 0 auto;
+    padding-top: 16rem; /* Augmenté pour descendre les cartes */
+    display: flex;
+    justify-content: center;
+}
+
+/* Styles pour les compétences générales (Soft Skills) */
+.soft-skill-card {
+    background-color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 280px;
+}
+
+.soft-skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.soft-skill-card.selected {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(233, 69, 96, 0.5);
+}
+
+.soft-skill-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.soft-skill-content .soft-skill-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.soft-skill-card:hover .soft-skill-icon {
+    transform: scale(1.1);
+}
+
+.soft-skill-card h4 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.soft-skill-card p {
+    font-size: 0.95rem;
+    color: var(--text-color-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 2rem 1rem;
+    }
+
+    .technical-skills-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+    
+    .soft-skill-card {
+        width: 100%;
+    }
+}

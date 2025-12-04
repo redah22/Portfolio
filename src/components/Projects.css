@@ -1,0 +1,62 @@
+.projects {
+  padding: 4rem 2rem;
+  min-height: 100vh; /* Ensure section takes full viewport height */
+  display: flex; /* Use flexbox for vertical alignment */
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
+.projects-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 3rem;
+  text-shadow: 0 0 10px var(--accent-color);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* New styles for SpotlightCard integration */
+.project-spotlight-card {
+  /* Overrides or complements default .card-spotlight styles */
+  background-color: var(--primary-color); /* Match original background */
+  padding: 2rem; /* Match original padding */
+  border-radius: 8px; /* Match original border-radius */
+  text-align: left; /* Match original text alignment */
+  transition: transform 0.3s, box-shadow 0.3s; /* Keep original transitions */
+  border: 1px solid var(--secondary-color); /* Match original border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Match original box-shadow */
+}
+
+.project-spotlight-card:hover {
+  transform: translateY(-10px); /* Keep original hover transform */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Keep original hover box-shadow */
+}
+
+.project-spotlight-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.project-spotlight-card h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-color-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.project-spotlight-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: var(--text-color-secondary);
+}

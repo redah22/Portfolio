@@ -1,0 +1,8 @@
+.darkveil-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Use vw and vh for full viewport coverage */
+  height: 100vh;
+  z-index: -1; /* Ensure it stays behind other content */
+}

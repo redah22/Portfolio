@@ -1,0 +1,25 @@
+.App {
+  padding: 2rem;
+  min-height: 100vh;
+  /* Pas de overflow hidden, on laisse le navigateur gérer le scroll */
+}
+
+main {
+  /* On retire les contraintes de hauteur et de scroll snap */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* Espacement entre les sections */
+}
+
+section {
+  /* On retire le height: 100vh forcé */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  position: relative;
+}

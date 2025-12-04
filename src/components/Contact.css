@@ -1,0 +1,231 @@
+.contact {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  color: var(--text-color);
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+/* --- Partie Gauche : Colonne --- */
+.contact-info-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-header-text h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem; /* Plus d'espace puisqu'on a enlevé la description */
+  color: #fff;
+}
+
+.contact-desc {
+  /* Supprimée visuellement si le <p> est vide, mais gardons le style au cas où */
+  margin-bottom: 2rem;
+  color: #a0a0a0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.info-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* --- Style des petites cartes individuelles --- */
+.info-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background: var(--primary-color);
+  border-color: var(--accent-color);
+}
+
+/* Style spécial pour les cartes Freelance / Passion */
+.highlight-card {
+    border-left: 3px solid var(--accent-color); /* Bordure gauche colorée pour les distinguer */
+    background: rgba(233, 69, 96, 0.05); /* Très léger fond rouge */
+}
+
+.icon-box {
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  border: 1px solid var(--text-color-secondary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color-secondary);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover .icon-box {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  border-color: var(--accent-color);
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.2rem;
+}
+
+.info-content span,
+.info-content a {
+  font-size: 1.05rem;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.info-content a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* --- Partie Droite : Formulaire --- */
+.contact-form {
+  flex: 1.3;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2.5rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(233, 69, 96, 0.2);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.submit-btn {
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  align-self: center;
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(233, 69, 96, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+.success-msg {
+  color: #4ade80;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.error-msg {
+  color: #f87171;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .contact-info-column,
+  .contact-form {
+    width: 100%;
+  }
+  
+  .contact-form {
+      padding: 2rem;
+      margin-top: 0;
+  }
+  
+  .submit-btn {
+    width: 100%;
+  }
+}

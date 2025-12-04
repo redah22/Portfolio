@@ -1,0 +1,22 @@
+.footer {
+  padding: 2rem;
+  background-color: transparent; /* Changed to transparent */
+  text-align: center;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Spacing between icons */
+  margin-top: 1rem;
+}
+
+.footer-icon {
+  color: var(--text-color-secondary);
+  transition: color 0.3s ease;
+  cursor: pointer; /* Indicate interactivity */
+}
+
+.footer-icon:hover {
+  color: var(--accent-color);
+}
