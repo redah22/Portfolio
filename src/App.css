@@ -1,19 +1,19 @@
 .App {
   padding: 2rem;
   min-height: 100vh;
-  /* Pas de overflow hidden, on laisse le navigateur gérer le scroll */
+  overflow-x: hidden; /* Sécurité globale */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 main {
-  /* On retire les contraintes de hauteur et de scroll snap */
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 4rem; /* Espacement entre les sections */
+  gap: 4rem;
 }
 
 section {
-  /* On retire le height: 100vh forcé */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -22,4 +22,19 @@ section {
   padding: 4rem 2rem;
   box-sizing: border-box;
   position: relative;
+}
+
+/* --- MOBILE FIX --- */
+@media (max-width: 768px) {
+  .App {
+    padding: 0; /* PLUS DE PADDING GLOBAL SUR MOBILE */
+    overflow-x: hidden;
+  }
+
+  section {
+    padding: 3rem 1rem; /* Padding interne réduit pour les sections */
+    width: 100%;
+    max-width: 100vw; /* Force brute */
+    overflow-x: hidden;
+  }
 }

@@ -208,24 +208,30 @@
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
+  .contact {
+      padding: 2rem 1rem; /* IMPORTANT : Padding latéral réduit */
+      overflow-x: hidden; /* Sécurité */
+  }
   .contact-title {
       font-size: 2rem;
       margin-bottom: 2rem;
   }
-
   .contact-container {
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem; /* Moins d'espace vertical */
+    width: 100%;
   }
 
   .contact-info-column,
   .contact-form {
     width: 100%;
+    margin: 0; /* Reset marges */
   }
   
   .contact-form {
-      padding: 2rem;
-      margin-top: 0; /* Reset margin sur mobile */
+      padding: 1.5rem; /* Padding interne réduit */
+      margin-top: 0;
+      box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
   }
   
   .submit-btn {

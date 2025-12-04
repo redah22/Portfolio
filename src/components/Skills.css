@@ -11,7 +11,7 @@
     color: var(--accent-color);
 }
 
-/* --- NOUVEAU : Grille pour les compétences techniques --- */
+/* --- Grille pour les compétences techniques --- */
 .technical-skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -48,7 +48,6 @@
     gap: 1rem;
 }
 
-/* Style des items individuels (StarBorder) */
 .skill-item {
     position: relative;
     background: rgba(0, 0, 0, 0.3);
@@ -68,16 +67,15 @@
     font-size: 0.9rem;
 }
 
-
-/* --- CardSwap Wrapper (Soft Skills) --- */
+/* --- CardSwap Wrapper (Desktop) --- */
 .cardswap-wrapper {
     margin: 0 auto;
-    padding-top: 16rem; /* Valeur Desktop */
+    padding-top: 16rem;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
-/* Styles pour les compétences générales (Soft Skills) */
 .soft-skill-card {
     background-color: var(--primary-color);
     border: 1px solid var(--secondary-color);
@@ -134,27 +132,40 @@
     line-height: 1.4;
 }
 
-/* Responsive adjustments */
+.card-swap-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* --- Mobile Carousel Wrapper --- */
+.mobile-carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 400px; /* Hauteur pour le carousel */
+    margin-top: 2rem;
+}
+
+/* --- RESPONSIVE MOBILE --- */
 @media (max-width: 768px) {
     .skills-section {
         padding: 2rem 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
 
     .skills-section h3 {
         font-size: 2rem;
         margin-bottom: 2rem;
+        text-align: center;
     }
 
     .technical-skills-grid {
-        grid-template-columns: 1fr; /* Une seule colonne */
+        grid-template-columns: 1fr;
     }
     
-    .cardswap-wrapper {
-        padding-top: 4rem; /* BEAUCOUP moins de padding sur mobile */
-    }
-    
-    .soft-skill-card {
-        width: 100%;
-        min-width: unset;
-    }
+    /* On n'a plus besoin de hacker .soft-skill-card car il n'est pas utilisé sur mobile */
 }

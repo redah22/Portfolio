@@ -71,19 +71,44 @@
   opacity: 1;
 }
 
-/* Mobile Adjustments */
+/* Mobile Adjustments - CORRECTION RADICALE */
 @media (max-width: 600px) {
     .dock-panel {
-        bottom: 0.5rem; /* Plus bas */
-        transform: translateX(-50%) scale(0.85); /* Légèrement plus petit */
-        width: 100%; /* Pour éviter les débordements */
+        bottom: 0; /* Collé en bas */
+        left: 0;
+        transform: none; /* Plus de centrage complexe */
+        width: 100%; /* Prend toute la largeur */
+        max-width: 100%;
+        background: rgba(22, 33, 62, 0.98); /* Fond opaque pour la barre */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.5rem 0;
         display: flex;
         justify-content: center;
     }
 
     .dock-inner-content {
-        background: rgba(22, 33, 62, 0.9); /* Fond plus opaque sur mobile pour la lisibilité */
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 0.5rem;
+        background: transparent; /* Plus de fond ici */
+        border: none;
+        padding: 0;
+        width: 100%;
+        justify-content: space-around; /* Espacement égal entre les icônes */
+        gap: 0;
+    }
+
+    .dock-outer {
+        width: 100%;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .dock-item {
+        margin: 0;
+        flex: 1; /* Chaque icône prend la même place */
+        padding: 0.5rem 0;
+    }
+    
+    /* Cache les labels sur mobile car ça gêne */
+    .dock-label {
+        display: none;
     }
 }

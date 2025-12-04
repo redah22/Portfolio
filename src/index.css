@@ -20,8 +20,23 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
+  width: 100%;
+  overflow-x: hidden; /* Empêche le scroll horizontal globalement */
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden; /* Empêche le débordement du conteneur React */
 }
 
 a {
@@ -73,4 +88,10 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Sécurité Responsive Globale */
+img, video, canvas, iframe, .soft-skill-card, .info-card, .card-swap-container {
+  max-width: 100%;
+  height: auto;
 }
