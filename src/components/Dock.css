@@ -71,44 +71,42 @@
   opacity: 1;
 }
 
-/* Mobile Adjustments - CORRECTION RADICALE */
+/* Mobile Adjustments - Retour au style flottant mais sécurisé */
 @media (max-width: 600px) {
     .dock-panel {
-        bottom: 0; /* Collé en bas */
-        left: 0;
-        transform: none; /* Plus de centrage complexe */
-        width: 100%; /* Prend toute la largeur */
-        max-width: 100%;
-        background: rgba(22, 33, 62, 0.98); /* Fond opaque pour la barre */
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 0.5rem 0;
+        bottom: 1rem; /* Un peu décollé du bas pour faire flottant */
+        left: 50%;
+        transform: translateX(-50%) scale(0.8); /* Échelle réduite mais lisible */
+        width: auto;
+        max-width: 90vw; /* Sécurité anti-débordement */
         display: flex;
         justify-content: center;
+        padding: 0;
     }
 
     .dock-inner-content {
-        background: transparent; /* Plus de fond ici */
-        border: none;
-        padding: 0;
-        width: 100%;
-        justify-content: space-around; /* Espacement égal entre les icônes */
-        gap: 0;
+        background: rgba(22, 33, 62, 0.85); /* Fond semi-transparent joli */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+        padding: 0.5rem;
+        width: fit-content;
+        justify-content: center;
+        flex-wrap: nowrap; /* On essaie de garder sur une ligne */
+        gap: 0.2rem;
     }
 
     .dock-outer {
-        width: 100%;
         margin: 0;
-        justify-content: center;
+        width: auto;
     }
 
     .dock-item {
-        margin: 0;
-        flex: 1; /* Chaque icône prend la même place */
-        padding: 0.5rem 0;
+        margin: 0 0.1rem;
+        padding: 0.2rem;
+        flex: 0 0 auto; /* Taille auto selon le contenu */
     }
     
-    /* Cache les labels sur mobile car ça gêne */
     .dock-label {
-        display: none;
+        display: none; /* Cache les labels sur mobile */
     }
 }

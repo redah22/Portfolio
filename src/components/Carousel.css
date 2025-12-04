@@ -81,6 +81,13 @@
   background-color: #fff;
 }
 
+.carousel-icon-container svg {
+  height: 16px; /* Force la taille du SVG */
+  width: 16px;
+  color: #060010 !important; /* Force la couleur noire */
+  stroke: #060010 !important; /* Au cas où */
+}
+
 .carousel-icon {
   height: 16px;
   width: 16px;

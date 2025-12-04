@@ -88,6 +88,17 @@ const Skills = ({ language }) => {
     <FiSearch className="soft-skill-icon" />
   ];
 
+  // Icônes spécifiques pour le Carousel (style neutre pour laisser le Carousel gérer)
+  const carouselIcons = [
+    <FiMessageSquare />,
+    <FiUsers />,
+    <FiRefreshCw />,
+    <FiClock />,
+    <FiZap />,
+    <FiTarget />,
+    <FiSearch />
+  ];
+
   const handleSoftCardClick = (index) => { 
     setSelectedSoftCardIndex(prevIndex => (prevIndex === index ? null : index));
   };
@@ -101,7 +112,7 @@ const Skills = ({ language }) => {
     title: skill.title,
     description: skill.description,
     id: index + 1,
-    icon: softSkillIcons[index]
+    icon: carouselIcons[index] // Utilisation des icônes neutres
   }));
 
 
