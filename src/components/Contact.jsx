@@ -26,7 +26,7 @@ const Contact = ({ language }) => {
       phoneLabel: "Téléphone",
       locationLabel: "Localisation",
       freelanceLabel: "Freelance",
-      freelanceDesc: "Disponible pour missions & sites web",
+      freelanceDesc: "Disponible pour missions & sites web à Montpellier, Toulouse et en remote.",
       aiLabel: "Passion",
       aiDesc: "IA & Data Engineering"
     },
@@ -44,7 +44,7 @@ const Contact = ({ language }) => {
       phoneLabel: "Phone",
       locationLabel: "Location",
       freelanceLabel: "Freelance",
-      freelanceDesc: "Available for gigs & websites",
+      freelanceDesc: "Available for gigs & websites in Montpellier, Toulouse and remotely.",
       aiLabel: "Passion",
       aiDesc: "AI & Data Engineering"
     }
