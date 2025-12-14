@@ -34,7 +34,7 @@ const Skills = ({ language }) => {
       technicalSkills: [
         { category: 'Skywise', skills: ['Dashboards & Workshops', 'Visualisation de KPIs', 'Traitement Données (Contour)', 'Pipelines de Données'] },
         { category: 'Python', skills: ['Numpy', 'Pandas', 'Scikit-learn', 'Data Collection', 'Nettoyage de Données', 'Algorithmes', 'CI/CD Pipelines', 'Tests & Typage'] },
-        { category: 'JAVA', skills: [] },
+        { category: 'JAVA', skills: ['Maven','Selenium','Cucumber','Mockito','JUnit'] },
         { category: 'SQL', skills: ['SQLite3', 'MySQL', 'PostgreSQL', 'Oracle', 'Requêtes Complexes', 'Modélisation BDD', 'Relations'] },
         { category: 'Cloud & CI/CD', skills: ['Git', 'GitHub', 'Gitlab', 'Pipelines CI/CD'] },
         { category: 'Data Viz', skills: ['Matplotlib', 'Dashboards', 'KPIs'] },
@@ -57,7 +57,7 @@ const Skills = ({ language }) => {
       technicalSkills: [
         { category: 'Skywise', skills: ['Dashboard & Workshop Dev', 'KPI Visualization', 'Data Processing (Contour)', 'Data Pipelines'] },
         { category: 'Python', skills: ['Numpy', 'Pandas', 'Scikit-learn', 'Data Collection', 'Data Cleaning', 'Algorithms', 'CI/CD Pipelines', 'Testing & Typing'] },
-        { category: 'JAVA', skills: [] },
+        { category: 'JAVA', skills: ['Maven','Selenium','Cucumber','Mockito','JUnit'] },
         { category: 'SQL', skills: ['SQLite3', 'MySQL', 'Complex Queries', 'DB Modeling', 'Relations'] },
         { category: 'Cloud & CI/CD', skills: ['Git', 'GitHub', 'Gitlab', 'CI/CD Pipelines'] },
         { category: 'Data Viz', skills: ['Matplotlib', 'Dashboards', 'KPIs'] },
